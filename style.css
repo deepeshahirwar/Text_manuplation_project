@@ -1,0 +1,37 @@
+.container {
+    margin: 10% 23% 2% 23%;
+    background: #313131;
+    padding-top: 2%;
+    padding-bottom: 2%;
+} 
+h2{
+    font-size: 30px; 
+    font-family: Arival;
+}
+
+#inputField {
+    background: #414141;
+    color: #fff;
+    font-size: 18px;
+    font-style: Arival, self;
+    border: 1px solid white;
+    width: 80%;
+} 
+button{
+    background: #414141; 
+    color: #fff; 
+    border: 0.8px solid white;  
+    width: 15%;
+    height: 30px; 
+    font-size: 16px;
+}
+
+p {
+    font-size: 18px; 
+    text-align: left; 
+    margin-left: 10%;
+}
+
+p span {
+    color: rgb(18, 209, 18);
+}

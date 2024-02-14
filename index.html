@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Text Manuplation js Project</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body style="text-align: center; background: #212121; color: #fff;">
+    <div class="container"> 
+        
+        <h2>Write text in this text box and get following results:</h2>
+        <div class="questions">
+        <p>1. Number of words in this text</p>
+        <p>2. Number of characters in this text</p>
+        <p>3. Number of distinct words in this text</p>
+        <p>4. In the text maximun occuring Word and it's frequency</p>
+       </div>
+
+        <textarea id="inputField" rows="10" cols="60">
+        </textarea>
+        <br><br>
+        <button onclick="countWords()">
+            Count Words
+        </button>
+
+        <button onclick="DeleteAllText()">
+            DeleteAll
+        </button>
+
+        <br><br>
+
+
+        <p> Words Count:
+            <span id="show">0</span>
+        </p>
+
+        <p> Characters Count:
+            <span id="show1">0</span>
+        </p>
+
+        <p> Distinct Words Count:
+            <span id="show2">0</span>
+        </p> 
+
+        <p> Max Occuring Word,it's frequnecy:
+            <span id="show3">0</span>
+        </p>
+
+    </div>
+
+
+    <script src="index.js"></script>
+</body>
+
+</html>
