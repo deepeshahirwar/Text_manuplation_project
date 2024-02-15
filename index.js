@@ -13,54 +13,66 @@ function CountDistinctWords(inputText) {
     }
 
 }
-
-function countWords() {
+ // this my main function that show all results
+ function countWords() { 
     let inputText = document.getElementById("inputField").value;
     inputText = inputText.trim();
-
-    let WordsCount = 0;
-    let CharCount = 0;
-
+    
+    // Check if the string is null or empty then return zero
+    if (inputText.length === 0) { 
+        alert('Please write atleat one word');
+      return 0;
+    }
+  
+    // Splitting the string around matches of the given regular expression
+    let words = [];
+    let temp = "";
+     let CharCount =0;
     for (let i = 0; i < inputText.length; i++) {
-        let currentcCharacter = inputText[i];
-
-        if (currentcCharacter === " ") { // for cnt words
-            WordsCount += 1;
-        }
-        if (currentcCharacter !== " ") {// for cnt chars
-            CharCount += 1;
-        }
+      if (inputText[i] === ' ') {
+        words.push(temp);
+        temp = "";
+      }  
+      else {
+        temp += inputText[i]; 
+        CharCount++;
+      }
     }
-    // Count the last word if the input is not empty
-    if (inputText.length > 0) {
-        WordsCount += 1;
-    }
-    // Display Words count
-    document.getElementById("show")
-        .innerHTML = WordsCount;
-
-    // Display characters count
-    document.getElementById("show1")
-        .innerHTML = CharCount;
-
-    // for Distinct word count
-    let DistinctWordCount = CountDistinctWords(inputText);
-    document.getElementById("show2")
-        .innerHTML = DistinctWordCount; 
-
-    // for maxfrequency Word count 
-    const { maxWord, maxFrequency } = findMaxOccurringWord(inputText);
-     // Count the last word if the input is not empty
-    if (inputText.length > 0) {
-        document.getElementById("show3")
-        .innerHTML = `${maxWord} , ${maxFrequency}`; 
-    }else{
-        document.getElementById("show3")
-        .innerHTML = "";
+  
+    let WordsCount = 1;
+  
+    for (let i = 0; i < words.length; i++) {
+      if (words[i].length !== 0) {
+        WordsCount++;
+      } 
+      
     }
     
+     // Display Words count
+     document.getElementById("show")
+     .innerHTML = WordsCount;
 
-} 
+   // Display characters count
+   document.getElementById("show1")
+     .innerHTML = CharCount;
+   
+     // for Distinct word count
+     let DistinctWordCount = CountDistinctWords(inputText);
+     document.getElementById("show2")
+         .innerHTML = DistinctWordCount; 
+ 
+     // for maxfrequency Word count 
+     const { maxWord, maxFrequency } = findMaxOccurringWord(inputText);
+      // Count the last word if the input is not empty
+     if (inputText.length > 0) {
+         document.getElementById("show3")
+         .innerHTML = `${maxWord} , ${maxFrequency}`; 
+     }else{
+         document.getElementById("show3")
+         .innerHTML = ""; 
+     }
+
+  } 
 
 // for deleting all text from inputbox
 function DeleteAllText() {
