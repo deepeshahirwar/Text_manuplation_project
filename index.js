@@ -12,6 +12,9 @@ function CountDistinctWords(inputText) {
         return 0;
     }
 
+} 
+function errorMassage(){
+  alert('Please write atleast one word');
 }
  // this my main function that show all results
  function countWords() { 
@@ -19,8 +22,8 @@ function CountDistinctWords(inputText) {
     inputText = inputText.trim();
     
     // Check if the string is null or empty then return zero
-    if (inputText.length === 0) { 
-        alert('Please write atleat one word');
+    if(inputText.length === 0) { 
+        errorMassage();
       return 0;
     }
   
@@ -75,11 +78,34 @@ function CountDistinctWords(inputText) {
   } 
 
 // for deleting all text from inputbox
-function DeleteAllText() {
+function DeleteAllText() { 
+    
     let inputText = document.getElementById("inputField").value;
     inputText = "";
-    document.getElementById("inputField").value = inputText;
-    countWords(); // Recalculate counts after deleting text
+    document.getElementById("inputField").value = inputText; 
+    alert('You want to delete your input text'); 
+    //countWords();  // Recalculate counts after deleting text 
+
+    // upadating data == 0 
+     // Display Words count
+     document.getElementById("show")
+     .innerHTML = 0;
+
+   // Display characters count
+   document.getElementById("show1")
+     .innerHTML = 0;
+   
+     // for Distinct word count
+     
+     document.getElementById("show2")
+         .innerHTML = 0; 
+ 
+     // for maxfrequency Word count 
+
+         document.getElementById("show3")
+         .innerHTML = `${0} , ${0}`; 
+    
+     
 } 
  
 // for fnding maximum frequency bala word and it's frequency count
